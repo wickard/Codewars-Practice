@@ -13,14 +13,18 @@
 // maxDuffelBagValue(cakeTypes, capacity);
 // // returns 555 (6 of the middle type of cake and 1 of the last type of cake)
 
+// ----------- "unbounded knapsack problem" -------------//
+
 const maxDuffelBagValue = (cakeTypes, capacity) => {
   let totalValue = 0;
   if (!capacity){
     return 0;
+    //what if you have cake that weights 0?
   }
   for (let i in cakeTypes){
     if (cakeTypes[i].weight === 0){
       return Infinity;
+      //what if value is also 0 ?
     }
     cakeTypes[i].unitVal = cakeTypes[i].value / cakeTypes[i].weight
   }
@@ -40,4 +44,9 @@ const maxDuffelBagValue = (cakeTypes, capacity) => {
     {weight: 2, value: 15},
 ];
 
-console.log(maxDuffelBagValue(cakeTypes, 20))
+//fails with certain capacities
+//need to check max value at every weight
+
+// Sometimes an efficient, good answer might be more practical than an inefficient, optimal answer.
+// traveling salesman problem... above would be more effeciant than checking max val at every weight
+
