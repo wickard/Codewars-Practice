@@ -45,6 +45,7 @@ const maxDuffelBagValue = (cakeTypes, capacity) => {
 ];
 
 //fails with certain capacities
+//try bottom up approach get greedy
 //need to check max value at every weight
 
 // Sometimes an efficient, good answer might be more practical than an inefficient, optimal answer.
